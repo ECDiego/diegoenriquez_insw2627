@@ -8,7 +8,3 @@ public class Main {
 
     
 }
-/*importar junit 5
-separar clases entre las funcionales y las de prueba ( en test ) 
-
-*/
