@@ -2,13 +2,13 @@ package com.uem;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Order;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import java.io.InputStream;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
-    private static final Logger log = LoggerFactory.getLogger(Main.class);
+    private static final Logger log = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper();
         try {
@@ -16,13 +16,13 @@ public class Main {
             if (is != null) {
                 List<Order> orders = mapper.readValue(is, new TypeReference<List<Order>>() {});
                 for (Order order : orders) {
-                    log.debug("Loaded order: {}", order.getId());
+                    log.fine("Loaded order: " + order.getId());
                 }
             } else {
-                log.error("no se puede encontrar el fichero orders.json");
+                log.severe("no se puede encontrar el fichero orders.json");
             }
         } catch (Exception e) {
-            log.error("error al leer el fichero de pedidos", e);
+            log.log(Level.SEVERE, "error al leer el fichero de pedidos", e);
         }
     }
 }

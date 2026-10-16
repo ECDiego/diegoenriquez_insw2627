@@ -34,7 +34,7 @@ public class CalculatorTestcase {
     @Test
     public void testSum() {
         double sumaconPositivo = calculator.sum(4.2, 5.8);
-        assertEquals(10.0, sumaPositiva);
+        assertEquals(10.0, sumaconPositivo);
         double sumaConNegativo = calculator.sum(-5.0, 8.5);
         assertEquals(3.5, sumaConNegativo);
     }

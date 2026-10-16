@@ -36,9 +36,9 @@ public class OrderTest {
 
         miPedido.addArticle(item1);
         miPedido.addArticle(item2);
-        assertEquals(esperado, resultado, 0.01);
-         double esperado = 43.0;
+        double esperado = 43.0;
         double resultado = miPedido.getDiscountedTotal();
+        assertEquals(esperado, resultado, 0.01);
 
       
     }
